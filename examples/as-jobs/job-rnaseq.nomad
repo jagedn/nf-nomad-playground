@@ -28,10 +28,6 @@
       driver = "docker"
 
       template{
-        destination = "local/main.nf"
-        data = file("./main.nf")
-      }
-      template{
         destination = "local/nextflow.config"
         data = file("./nextflow.config")
       }
@@ -49,10 +45,6 @@
 
         mounts = [
           {
-            type   = "bind"
-            source = "local/main.nf"
-            target = "/local/main.nf"
-          },{
             type   = "bind"
             source = "local/nextflow.config"
             target = "/local/nextflow.config"
